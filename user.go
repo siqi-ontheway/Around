@@ -66,6 +66,7 @@ func handlerLogin(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Received one login request")
 	w.Header().Set("Content-Type", "text/plain")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
 	if r.Method == "OPTIONS" {
 		return
@@ -112,6 +113,7 @@ func handlerSignup(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Received one signup request")
 	w.Header().Set("Content-Type", "text/plain")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
 	if r.Method == "OPTIONS" {
 		return
